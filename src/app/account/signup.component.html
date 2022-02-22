@@ -1,0 +1,365 @@
+
+ <div class="container gradient-ocean-blue"> <!-- View Top-->
+  <div class="row sector-margin">
+    <div class="col-xl-12">
+      <p class="text-center m-5  home-top-text">
+        Zentralrat Data Capture
+      </p>
+    </div>
+  </div>
+
+  <!-- Data capture section -->
+  <form action="">
+    <div class="row sector-margin" >
+      <div class="col-xl-3 justify-content-center">
+        <!-- <a href="" data-mdb-target="#exampleModal"> -->
+          <img src="./assets/images/personal-male.png"
+               class="img-fluid rounded-circle"
+               style="border: 2px solid darkgray;"
+
+               alt="User profile picture" data-mdb-target="#exampleModal" />
+        <!-- </a> -->
+      </div>
+      <div class="col-xl-9">
+        <fieldset>
+          <legend>Personal Data</legend>
+          <div class="row" >
+            <div class="col-6 col-margin">
+              <div class="datacapture-container-c2">
+                <mat-form-field appearance="outline">
+                  <mat-label>First name</mat-label>
+                  <input matInput
+                         type="text"
+                         name="profileDTO.firstname"
+                         #fname="ngModel"
+                         placeholder="First name"
+                         [(ngModel)]="profileDTO.firstname"
+                         required >
+                  <mat-hint>Enter your First name: {{profileDTO.firstname}}</mat-hint>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-6" col-margin>
+              <div class="datacapture-container-c2">
+                <mat-form-field appearance="outline">
+                  <mat-label>Last name</mat-label>
+                  <input matInput
+                         type="text"
+                         name="profileDTO.lastname"
+                         #fname="ngModel"
+                         placeholder="Last name"
+                         [(ngModel)]="profileDTO.lastname"
+                         required>
+                  <mat-hint>Enter your last name</mat-hint>
+                </mat-form-field>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="datacapture-container-c2">
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input matInput
+                         type="text"
+                         placeholder="Email"
+                         name="profileDTO.email"
+                         #fname="ngModel"
+                         [(ngModel)]="profileDTO.email"
+                         required>
+                  <mat-hint>Enter your email</mat-hint>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="datacapture-container-c2">
+                <mat-form-field appearance="outline">
+                  <input matInput
+                         [matDatepicker]="dobpicker"
+                         name="profileDTO.birthday"
+                         placeholder="Choose a date"
+                         [(ngModel)]="profileDTO.birthday"
+                         required>
+                  <mat-datepicker-toggle matSuffix [for]="dobpicker"></mat-datepicker-toggle>
+                  <mat-datepicker #dobpicker></mat-datepicker>
+                  <mat-hint>Enter your date of birth</mat-hint>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+
+    </div>
+
+
+    <fieldset>
+      <legend>Address</legend>
+
+      <div class="row">
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Street</mat-label>
+              <input matInput
+              name="profileDTO.street"
+              #street="ngModel"
+              [(ngModel)]="profileDTO.street"
+              placeholder="Street">
+              <mat-hint>Please enter your street</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>City</mat-label>
+              <input matInput
+              name="profileDTO.city"
+              #city="ngModel"
+              [(ngModel)]="profileDTO.city"
+              placeholder="City">
+              <mat-hint>Please enter your City</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Zipcode</mat-label>
+              <input matInput style="background-color: whitesmoke;"
+                     name="profileDTO.postalcode"
+                     #postcode="ngModel"
+                     [(ngModel)]="profileDTO.postalcode"
+                     placeholder="Zipcode">
+              <mat-hint>Please enter your zipcode</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>State</mat-label>
+              <input matInput
+                     name="profileDTO.state"
+                     #state="ngModel"
+                     [(ngModel)]="profileDTO.state"
+                     placeholder="State">
+              <mat-hint>Please enter your state</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+    </fieldset>
+    <div style="height: 10px"></div>
+    <fieldset>
+      <legend>Telephone</legend>
+
+      <div class="row">
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Mobile</mat-label>
+              <input matInput
+                     name="profileDTO.mobilePhone"
+                     #mobile="ngModel"
+                     [(ngModel)]="profileDTO.mobilePhone"
+                     placeholder="Mobile">
+              <mat-hint>Please enter your mobile phone number</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Home</mat-label>
+              <input matInput style="background-color: whitesmoke;"
+                     name="profileDTO.homePhone"
+                     #home="ngModel"
+                     [(ngModel)]="profileDTO.homePhone"
+                     placeholder="Home">
+              <mat-hint>Please enter your Home phone number</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div style="height: 10px"></div>
+    <fieldset>
+      <legend>Organisation Data</legend>
+
+      <div class="row">
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Society</mat-label>
+              <input matInput
+                     name="profileDTO.memberOrganisationName"
+                     #society="ngModel"
+                     [(ngModel)]="profileDTO.memberOrganisationName"
+                     placeholder="Society">
+              <mat-hint>Please enter your society</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Join Date</mat-label>
+              <input matInput
+                     [matDatepicker]="joinpicker"
+                     name="profileDTO.dateJoined"
+                     #dateJoined="ngModel"
+                     [(ngModel)]="profileDTO.dateJoined">
+              <mat-datepicker-toggle matSuffix [for]="joinpicker"></mat-datepicker-toggle>
+              <mat-datepicker #joinpicker></mat-datepicker>
+              <mat-hint>Please enter your join date</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <span>
+              <mat-checkbox
+               name="zm-checked"
+               [(ngModel)]="profileDTO.internalEmployee">
+                Zentralrat Mitarbeiter
+              </mat-checkbox>
+            </span>
+            <span>
+              <mat-checkbox
+              name="om-checked"
+              [(ngModel)]="profileDTO.organisationMember">
+                Organisation Member
+              </mat-checkbox>
+            </span>
+          </div>
+          <div class="datacapture-container">
+            <span>
+              <mat-checkbox
+              name="im-checked"
+              [(ngModel)]="profileDTO.individualMember">
+                Individual Member
+              </mat-checkbox>
+            </span>
+          </div>
+        </div>
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Position</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let position of positions" [value]="position.name">
+                  {{ position.viewName }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div style="height: 10px"></div>
+    <fieldset>
+      <legend>Login Data</legend>
+
+      <div class="row">
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Username/Email</mat-label>
+              <input matInput placeholder="Username or Email">
+              <mat-hint>Please enter your a username or email</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-6 col-margin" >
+          <div class="datacapture-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" style="background-color: whitesmoke;">
+              <button mat-icon-button matSuffix (click)="hide = !hide"
+                      [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide" style="border: 0px">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-hint>Please enter your Home phone number</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div style="height: 10px"></div>
+    <fieldset>
+      <legend>Extra Info</legend>
+
+      <div class="row">
+        <div class="col-12 col-margin" >
+          <mat-form-field appearance="outline" class="extra-note">
+            <mat-label>Note</mat-label>
+            <textarea matInput placeholder="Note"></textarea>
+            <mat-hint>Enter any extra information</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="row" style="height: 100px;">
+        <div class="col-6" sty>
+          <button mat-raised-button
+                  color="primary"
+                  class="center-element"
+                  routerLink="/home"
+                  routerLinkActive="router-link-active">
+            Cancel
+          </button>
+        </div>
+        <div class="col-6">
+          <button mat-raised-button color="primary"
+                  class="center-element"
+                  (click)=onSubmit()>
+            Submit
+          </button>
+        </div>
+      </div>
+    </fieldset>
+
+    <div style="height: 40px"></div>
+  </form>
+</div>
+
+<!-- Modal -->
+<div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+  <div class="modal-dialog  ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

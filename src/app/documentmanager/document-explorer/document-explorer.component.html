@@ -1,0 +1,127 @@
+<div class="container-xl gradient-ocean-blue">
+  <div class="row" style="height: 60px;">
+    <div class="col-md-12 col-lg">
+         <p class="text-center m-3  fs-3 fs">
+           ZAGD DCI Explorer
+         </p>
+    </div>
+  </div>
+
+  <div class="row breadcrumb-background"  style="height: 48px;">
+    <div class="col-2 text-start">
+      <span style="margin: 5px">
+        <a id="dashboard2backhome"
+           routerLink="/home"
+           routerLinkActive="router-link-active">
+           <!-- <img src="./assets/images/icon-home.jpg" alt="User data" width="32px" height="32px"> -->
+            <button mat-icon-button aria-label="Show upload dialog">
+             <mat-icon>home</mat-icon>
+            </button>
+          </a>
+      </span>
+    </div>
+    <div class="col-10 text-end">
+      <span style="margin: 5px">
+         <!-- <a id="dashboard2Datacapture"
+                 routerLink="/docuploader"
+                 routerLinkActive="router-link-active">
+                 <img src="./assets/images/upload-icon.png" alt="User data" width="32px" height="32px">
+              </a> -->
+        <button mat-icon-button aria-label="Show upload dialog" (click)="openModal()">
+          <mat-icon>cloud_upload</mat-icon>
+        </button>
+
+      </span>
+      <span style="padding-left: 5px; padding-right: 5px">
+        <!-- <img src="./assets/images/download-icon.png" alt="User data" width="32px" height="32px"> -->
+        <button mat-icon-button aria-label="Show download dialog" (click)="openModal()">
+          <mat-icon>cloud_download</mat-icon>
+        </button>
+      </span>
+      <span style="padding-left: 5px; padding-right: 5px">
+        <!-- <a id="dashboard2docmanager"
+           routerLink="/docuploader"
+           routerLinkActive="router-link-active">
+           <img src="./assets/images/waste-bin-icon.png" alt="User data" width="32px" height="32px">
+        </a> -->
+        <button mat-icon-button aria-label="Show download dialog" (click)="openModal()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </span>
+      <span style="padding-left: 5px; padding-right: 5px">
+        <!-- <img src="./assets/images/icon-settings.jpg" alt="User data" width="32px" height="32px"> -->
+        <button mat-icon-button aria-label="Show download dialog" (click)="openModal()">
+          <mat-icon>settings</mat-icon>
+        </button>
+      </span>
+      <span style="padding-left: 5px; padding-right: 5px">
+        <img src="./assets/images/icon-male.jpg" alt="User data" width="32px" height="32px">
+      </span>
+    </div>
+  </div>
+
+  <div class="row" style="height: 100%;">
+
+    <div class="col-md-3 text-left gradient-btw-red-purple" style="color: whitesmoke">
+      <!-- Section for drive and folder display-->
+      <div  style="margin-top: 20px; margin-left: 10px">
+        <span class="drive-folder-list">
+          <img src="./assets/images/disc-drive-icon.png" alt="Disc Drive" width="32px" height="32px">
+        </span>
+        <span>
+           ZAGD Drive
+        </span>
+      </div>
+      <div><hr></div>
+      <div>
+        <app-display-folder></app-display-folder>
+      </div>
+    </div>
+
+    <div class="col-md-9 border" style="background-color: white;">
+       <!--Empty view and populated view-->
+
+      <div [hidden]="populatedView" class="row">
+        No folder available
+      </div>
+
+      <div [hidden]="!populatedView" class="row">
+      <!-- Section view for folders and files-->
+      <div class="row justitfy-content-evenly" style="margin-top: 60px; margin-left: 20px;">
+        <div class="col-md-4">
+          <div class="card text-center ">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+              </a>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Data Manager</h5>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+
+
+      <div class="row" style="margin-top: 40px;">
+
+        <div class="col-md-2">
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" style="height: 150px">
+
+    </div>
+  </div>
+</div>
+

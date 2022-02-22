@@ -1,1 +1,188 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+.gradient-ocean-blue {
+  height: 100%;
+  background: #6a85b6;
+  background: -webkit-linear-gradient(to bottom, rgba(106, 133, 182, 0.5), rgba(186, 200, 224, 0.5));
+  background: linear-gradient(to bottom, rgba(106, 133, 182, 0.5), rgba(186, 200, 224, 0.5))
+}
+
+.gradient-purple {
+  background: #964dac;
+  background: -webkit-linear-gradient(to bottom, rgba(134, 71, 139, 0.5), rgba(247, 143, 247, 0.5));
+  background: linear-gradient(to bottom, rgba(150, 73, 146, 0.5), rgba(235, 138, 230, 0.5))
+}
+
+.gradient-btw-red-purple {
+  background: #7c3049;
+  background: -webkit-linear-gradient(to bottom, rgba(121, 49, 79, 0.5), rgba(209, 100, 133, 0.5));
+  background: linear-gradient(to bottom, rgba(121, 49, 79, 0.5), rgba(209, 100, 133, 0.5))
+}
+
+.gradient-happy-fisher {
+  background: #66a6ff;
+  background: -webkit-linear-gradient(to left, rgba(102, 166, 255, 0.5), rgba(137, 247, 254, 0.5));
+  background: linear-gradient(to bottom, rgba(102, 166, 255, 0.5), rgba(137, 247, 254, 0.5))
+}
+
+.gradient-plum-plate {
+  background: #764ba5;
+  background: -webkit-linear-gradient(to left, rgba(118, 75, 162, 0.5), rgba(102, 126, 234, 0.5) );
+  background: linear-gradient(to left, rgba(118, 75, 162, 0.5), rgba(102, 126, 234, 0.5))
+}
+
+.home-top-text {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-top: 30px;
+}
+
+.input-generic {
+  background-color:white;
+  border:1px solid #bdbdbd;
+  border-radius:.25rem
+}
+
+.input-generic-noborder {
+  background-color:white;
+  border:0px solid #bdbdbd;
+  border-radius:.25rem;
+  margin-top: 20px
+}
+
+.breadcrumb-background {
+  padding: 10px;
+  vertical-align: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-left: 1px solid rgb(211, 207, 207);
+  border-right: 1px solid rgb(211, 207, 207);
+}
+
+.sector-margins {
+  margin: 20px;
+}
+
+.col-margins {
+  margin: 10px 20px 20px 10px;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto,
+  "Helvetica Neue", sans-serif;
+  background: #66a6ff;
+  background: -webkit-linear-gradient(to left, rgba(102, 166, 255, 0.5), rgba(137, 247, 254, 0.5));
+  background: linear-gradient(to bottom, rgba(102, 166, 255, 0.5), rgba(137, 247, 254, 0.5))
+ }
+
+
+.form-field-notch {
+  border: rgba(0, 0, 0, 12) 1px solid;
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem;
+}
+
+.form-field-notch.with-hover-transition {
+  transition: border-color ease-in 0.1s;
+}
+
+fieldset {
+  font-size: 20px;
+  border: 1px solid gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+}
+
+legend {
+  position: relative;
+  margin: 0 20px;
+  top: -1.0ex;
+  width: fit-content;
+  background: whitesmoke;
+}
+
+.wrapper {
+  position: relative;
+  margin: 20px;
+}
+
+.float {
+  position: absolute;
+  font-weight: bold;
+  top: -1.8ex;
+  left: 10px;
+  padding: 0 10px;
+  background: #91ade0;
+  z-index: 1;
+}
+
+.noborder {
+  border: 0px;
+}
+
+.float-title {
+  border: 1px solid #ccc;
+  padding: 1ex;
+}
+
+.float-title::after {
+  content: attr(title);
+  position: absolute;
+  top: -1.8ex;
+  left: 10px;
+  padding: 0 10px;
+  background: whitesmoke;
+  z-index: 1;
+}
+
+.datacapture-container .mat-form-field + .mat-form-field  {
+  margin-left: 8px;
+}
+
+.datacapture-container .mat-form-field {
+  width: 500px;
+  margin: 10px 10px 20px;
+  align-content: center;
+}
+
+.datacapture-container-c2 .mat-form-field + .mat-form-field  {
+  margin-left: 10px;
+}
+
+.datacapture-container-c2 .mat-form-field {
+  width: 400px;
+  margin: 10px 10px 20px;
+  align-content: center;
+}
+
+span .mat-checkbox {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  margin-left: 20px;
+}
+
+.center-element {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.extra-note {
+  width: 600px;
+  margin: 20px
+}

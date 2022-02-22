@@ -1,0 +1,18 @@
+<ng-container *ngFor="let folder of folders">
+  <ul>
+      <ng-container [ngTemplateOutlet]="folderNode" [ngTemplateOutletContext]="{$implicit:folder}"></ng-container>
+  </ul>
+</ng-container>
+
+<ng-template #folderNode let-folder>
+  <li class="list-icon"> {{folder.folderName}} </li>
+  <li *ngFor="let file of folder.files">{{file}}</li>
+  <ng-container *ngIf="folder.folder">
+      <ng-container *ngFor="let subFolder of folder.folder">
+          <ul>
+              <ng-container [ngTemplateOutlet]="folderNode" [ngTemplateOutletContext]="{$implicit:subFolder}">
+              </ng-container>
+          </ul>
+      </ng-container>
+  </ng-container>
+</ng-template>

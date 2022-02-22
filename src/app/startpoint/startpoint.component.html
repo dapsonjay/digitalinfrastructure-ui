@@ -1,0 +1,76 @@
+<div class="container gradient-ocean-blue" style="width: 2000px; height: 100%;">
+  <div class="row gx-2" style="height: 20vh;">
+
+    <div class="col-md-3">
+      <a id="startpoint2backhome"
+         routerLink="/home"
+         routerLinkActive="router-link-active" >
+        <img src="./assets/images/zentralrat-logo-shorter-world-top.png" alt="Paris">
+      </a>
+    </div>
+
+    <div class="col-md-9 home-top-text">
+      Zentralrat Digital Infrastructure - Data Manager
+    </div>
+
+  </div>
+
+  <div class="d-flex" style="height: 100%;">
+
+    <div class="col computer-background">
+      <div>
+        <div [hidden]="!  loggedInUser" class="computer-title justify-content-center fw-bolder" style="font-size: 3em; padding-top: 8px; color:blue">
+          <a id="dashboard2backhome"
+          routerLink="/dashboard"
+          routerLinkActive="router-link-active">
+          Data &amp; Document Manager
+          </a>
+        </div>
+        <div [hidden]="loggedInUser" class="computer-title justify-content-center fw-bolder" style="font-size: 3em; padding-top: 8px; color:blue">
+          <a id="dashboard2backhome"
+          routerLink="/login"
+          routerLinkActive="router-link-active">
+          Data &amp; Document Manager
+          </a>
+        </div>
+
+      </div>
+      <div>
+        <div class="d-flex justify-content-center">
+          <img src="./assets/images/data-manager-dashboard.jpg"  alt="Paris" style="overflow-x: hidden;" height="70%" width="70%">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col computer-background">
+      <div>
+        <div class="computer-title justify-content-center fw-bolder" style="font-size: 3em; padding-top: 8px; color:red; margin-left: 35%">
+          <a id="dashboard2backhome"
+          routerLink="/dashboard"
+          routerLinkActive="router-link-active">
+          Dashboard
+          </a>
+        </div>
+        <div [hidden]="loggedInUser" class="computer-title justify-content-center fw-bolder" style="font-size: 3em; padding-top: 8px; color:blue">
+          <a id="dashboard2backhome"
+          routerLink="/login"
+          routerLinkActive="router-link-active">
+          Dashboard
+          </a>
+
+        </div>
+      </div>
+      <div>
+        <div class="d-flex justify-content-center">
+          <img src="./assets/images/document-manager-dashboard.jpg"  alt="Paris" height="80%" width="80%">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
