@@ -1,5 +1,6 @@
 import { ProfileDTOService } from './../../services/profile-data.service';
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProfileDTO } from "src/app/model/profileDTO";
 
 

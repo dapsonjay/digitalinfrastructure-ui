@@ -1,8 +1,10 @@
 import { EndPointUrls } from './../model/endPointUrls';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, ReplaySubject } from 'rxjs';
+import { map } from "rxjs/operators"
 import { ProfileDTO } from "../model/profileDTO";
+import { PageableProfileDataDto } from '../model/pageprofiledto';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ export class ProfileDTOService {
   private endPoints = new EndPointUrls();
   private _profileDTOSubject = new ReplaySubject(1);
   profileDTO = this._profileDTOSubject.asObservable();
+
 
   constructor(private http: HttpClient) { }
 
@@ -26,13 +29,34 @@ export class ProfileDTOService {
 
   }
 
-  getUniqueProfile(profileId: number) {
+  getUniqueProfile(profileId: number) {}
 
 
+  getProfilesData(search: string, page: number,
+              size: number, sort: any, direction: string): Observable<PageableProfileDataDto> {
+     return this.http.get<PageableProfileDataDto>(this.endPoints.getProfilesEndPoint, {
+       params: new HttpParams()
+       .set('searchString', search)
+       .set('page', page.toString())
+       .set('size', size)
+       .set('sort', sort)
+       .set('direction', direction),
+       responseType: 'json'
+     });
   }
 
-  getProfiles(search: string) {
+  getProfilesDataPage(search: string, page: number,
+                  size: number, sort: any, direction: string): Observable<PageableProfileDataDto> {
 
+                    return this.http.get<PageableProfileDataDto>(this.endPoints.getProfilesEndPoint, {
+                                        params: new HttpParams()
+                                        .set('searchString', search)
+                                        .set('page', page.toString())
+                                        .set('size', size)
+                                        .set('sort', sort)
+                                        .set('direction', direction),
+                                        responseType: 'json'
+                                       });
   }
 
   getDummyProfile() : ProfileDTO {

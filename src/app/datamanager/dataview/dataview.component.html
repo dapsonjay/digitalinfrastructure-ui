@@ -1,1 +1,120 @@
-<p>dataview works!</p>
+<div class="container gradient-ocean-blue">
+
+  <div class="row sector-margin">
+    <div class="col-12 sector-margin" style="margin-top: 30px;">
+      <span class="text-center home-top-text">
+        <a id="dashboard2backhome"
+           routerLink="/home"
+           routerLinkActive="router-link-active">
+           <mat-icon style="">home</mat-icon>
+           <!-- <img src="./assets/images/icon-home.jpg" alt="User data" width="32px" height="32px" style="padding-top: 10px;"> -->
+          </a>
+      </span>
+      <span class="text-center home-top-text" style="margin-left: 100px">
+        Zentralrat Data View
+      </span>
+    </div>
+  </div>
+
+  <div class="=row sector-margin">
+    <div class="col-xl-12  sector-margin">
+      <div class="row"  style="background-color: white;">
+        <div class="col-6 col-margin">
+          <div class="datacapture-container" >
+            <mat-form-field appearance="outline">
+                <input matInput
+                [ngModel]="search"
+                placeholder="Ammy Stanford Berlin">
+                <mat-hint>e.g search string like firstname lastname email or phone number</mat-hint>
+                <button mat-icon-button matSuffix (click)="onSearch()" style="border: 0px">
+                  <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-6 col-margin text-center" style="height: 30px; line-height: 30px; padding: 15px; font-weight: bolder;">
+          Size: {{ totalElements }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12">
+
+          <div class="spinner-container" *ngIf="loading">
+              <mat-spinner></mat-spinner>
+          </div>
+
+          <div class="scrolling-container">
+              <table mat-table class="profile-table mat-elevation-z8"
+                     matSort matSortDisableClear matSortActive="seqNo" matSortDirection="asc"
+                     [dataSource]="datasource" multiTemplateDataRows>
+                  <ng-container matColumnDef="select" sticky>
+                      <th mat-header-cell *matHeaderCellDef>
+                          <mat-checkbox [checked]="selection.hasValue() && isAllSelected()"
+                                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                        (change)="toggleAll()">
+                          </mat-checkbox>
+                      </th>
+                      <td  mat-cell *matCellDef="let profileDTO" (click)="$event.stopPropagation()">
+                          <mat-checkbox (change)="onProfileToggled(profileDTO)"
+                                        [checked]="selection.isSelected(profileDTO)">
+                          </mat-checkbox>
+                      </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="id" sticky>
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+                      <td mat-cell *matCellDef="let profileDTO">{{profileDTO.profileId}}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="firstname">
+                      <th mat-header-cell *matHeaderCellDef>Firstname</th>
+                      <td class="profile-cell" mat-cell *matCellDef="let profileDTO">{{profileDTO.firstname}}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="lastname">
+                      <th mat-header-cell *matHeaderCellDef>Lastname</th>
+                      <td class="profile-cell" mat-cell *matCellDef="let profileDTO">{{profileDTO.lastname}}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef>Email</th>
+                    <td class="profile-cell" mat-cell *matCellDef="let profileDTO">{{profileDTO.email}}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="phoneNr">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+                    <td class="profile-cell"  mat-cell *matCellDef="let profileDTO">{{profileDTO.mobilePhone}}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="expandedDetail">
+                      <td mat-cell *matCellDef="let profileDTO" colspan="4">
+                          {{profileDTO.username}}
+                      </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true">
+                  </tr>
+
+                  <tr mat-row
+                      (click)="onToggleProfile(profileDTO)"
+                      *matRowDef="let profileDTO; columns:displayedColumns">
+
+                  </tr>
+
+                  <tr mat-row *matRowDef="let lesson;columns:['expandedDetail']"
+                      [class.collapsed-detail]="lesson != expandedProfileData">
+                  </tr>
+              </table>
+          </div>
+
+          <mat-paginator class="mat-elevation-z8"
+                         [length]="profileData?.length"
+                         [pageSize]="3"
+                         [pageSizeOptions]="[3, 5, 10]">
+          </mat-paginator>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DatacaptureComponent } from './datacapture.component';
+import { IncidentReportingComponent } from './incident-reporting.component';
 
-describe('DatacaptureComponent', () => {
-  let component: DatacaptureComponent;
-  let fixture: ComponentFixture<DatacaptureComponent>;
+describe('IncidentReportingComponent', () => {
+  let component: IncidentReportingComponent;
+  let fixture: ComponentFixture<IncidentReportingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DatacaptureComponent ]
+      declarations: [ IncidentReportingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DatacaptureComponent);
+    fixture = TestBed.createComponent(IncidentReportingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

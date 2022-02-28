@@ -34,14 +34,20 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadDocComponent } from './documentmanager/upload-doc/upload-doc.component'
 import { HttpClientModule } from '@angular/common/http';
 import { DocumentExplorerComponent } from './documentmanager/document-explorer/document-explorer.component';
 import { DisplayFolderComponent } from './documentmanager/display-folder/display-folder.component';
 import { FilePickerComponent } from './modal/file-picker/file-picker.component';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { SignupComponent } from './account/signup.component';
+import { TelephoneInputComponent } from './common-components/telephone-input/telephone-input.component';
+import { IncidentReportingComponent } from './incident-reporting/incident-reporting.component';
 
 
 @NgModule({
@@ -58,7 +64,9 @@ import { SignupComponent } from './account/signup.component';
     DocumentExplorerComponent,
     DisplayFolderComponent,
     FilePickerComponent,
-    SignupComponent
+    SignupComponent,
+    TelephoneInputComponent,
+    IncidentReportingComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +96,10 @@ import { SignupComponent } from './account/signup.component';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule

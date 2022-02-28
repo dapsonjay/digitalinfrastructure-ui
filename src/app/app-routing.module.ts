@@ -1,3 +1,4 @@
+import { DataviewComponent } from './datamanager/dataview/dataview.component';
 import { UploadDocComponent } from './documentmanager/upload-doc/upload-doc.component';
 import { DatacaptureComponent } from './datamanager/datacapture/datacapture.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'login', component: LoginUse01Component },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'datacapture', component: DatacaptureComponent },
+  { path: 'dataview', component: DataviewComponent },
   { path: 'docuploader', component: UploadDocComponent },
   { path: 'docexplorer', component: DocumentExplorerComponent },
   { path: '**', component: HomeComponent}
