@@ -10,6 +10,8 @@ import { UploadDocComponent } from '../upload-doc/upload-doc.component';
 })
 export class DocumentExplorerComponent implements OnInit {
 
+  topTitle: string = "ZAGD Document Explorer";
+
   populatedView: boolean = true;
 
   constructor(public matDialog: MatDialog) { }

@@ -1,5 +1,5 @@
 import { ProfileDTOService } from './../../services/profile-data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProfileDTO } from "src/app/model/profileDTO";
 
@@ -25,13 +25,14 @@ export class DatacaptureComponent implements OnInit {
     {name: 'Board Member', viewName: 'Board Member'},
   ]
 
+  topTitle: string = "ZADG Data Capture";
+
   hide = true;
   firstname: any;
   profileDTO: ProfileDTO = new ProfileDTO();
   employee: boolean = false;
   memberOrg: boolean = false;
   indMember: boolean = false;
-
 
   constructor(private profileDTOService: ProfileDTOService) {
 

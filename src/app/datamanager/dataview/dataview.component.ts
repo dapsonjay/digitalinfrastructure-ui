@@ -17,8 +17,10 @@ import { finalize, first } from 'rxjs/operators';
 })
 export class DataviewComponent implements OnInit {
 
-  // pageProfileDataDTO: PageableProfileDataDto | undefined;
-  pageProfileDataDTO: any = null;
+  topTitle: string = "ZAGD Data View";
+
+  pageProfileDataDTO?: PageableProfileDataDto | null;
+  // pageProfileDataDTO: any = null;
   profileData: ProfileDTO[] = [];
   loading = false;
 
@@ -35,7 +37,7 @@ export class DataviewComponent implements OnInit {
 
   datasource = new MatTableDataSource<ProfileDTO>();
 
-  search: string = "";
+  searchValue: string = "";
 
   totalElements: number = 0;
 
@@ -44,17 +46,24 @@ export class DataviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileData = this.route.snapshot.data["profileData"];
-    this.loadProfileData()
+    // this.loadProfileData("");
   }
 
-loadProfileData() {
+loadProfileData(searchtext: string) {
     this.loading = true;
-    this.profileDTOService.getProfilesData('test', 0, 3, 'lastname', 'asc')
-                          .pipe(first())
+    this.searchValue = searchtext;
+    console.log(`Search string ${this.searchValue}`);
+    this.profileDTOService.getProfilesData(this.searchValue, 0, 15, 'lastname', 'asc')
                           .subscribe((res) => {
                             this.pageProfileDataDTO = res;
+                            this.profileData = this.pageProfileDataDTO?.profileDTO;
+                            console.log(this.pageProfileDataDTO?.profileDTO);
+                            console.log(this.profileData)
                            },
-                           (error) => { console.log("Error occur"); },
+                           (error) => {
+                             console.log("Error occur");
+                             this.loading = false;
+                          },
                            () => {
                               this.loading = false;
                            });

@@ -1,9 +1,9 @@
+import { ProfileDTO } from './../model/profileDTO';
 import { EndPointUrls } from './../model/endPointUrls';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, ReplaySubject } from 'rxjs';
 import { map } from "rxjs/operators"
-import { ProfileDTO } from "../model/profileDTO";
 import { PageableProfileDataDto } from '../model/pageprofiledto';
 
 @Injectable({
@@ -33,16 +33,19 @@ export class ProfileDTOService {
 
 
   getProfilesData(search: string, page: number,
-              size: number, sort: any, direction: string): Observable<PageableProfileDataDto> {
+                  size: number, sort: any,
+                  direction: string): Observable<PageableProfileDataDto> {
+
      return this.http.get<PageableProfileDataDto>(this.endPoints.getProfilesEndPoint, {
        params: new HttpParams()
-       .set('searchString', search)
+       .set('searchstring', search)
        .set('page', page.toString())
        .set('size', size)
        .set('sort', sort)
        .set('direction', direction),
        responseType: 'json'
      });
+
   }
 
   getProfilesDataPage(search: string, page: number,

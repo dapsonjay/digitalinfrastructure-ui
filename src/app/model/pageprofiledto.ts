@@ -14,7 +14,7 @@ export interface PageMetaData {
   totalElements: number;
 }
 
-export interface PageableProfileDataDto {
-  profileDto: ProfileDTO[];
-  page: PageMetaData;
+export class PageableProfileDataDto {
+  constructor(public profileDTO: ProfileDTO[],
+              public page: PageMetaData) {}
 }

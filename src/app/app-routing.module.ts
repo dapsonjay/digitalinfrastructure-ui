@@ -1,3 +1,4 @@
+import { IncidentReportingComponent } from './incident-reporting/incident-reporting.component';
 import { DataviewComponent } from './datamanager/dataview/dataview.component';
 import { UploadDocComponent } from './documentmanager/upload-doc/upload-doc.component';
 import { DatacaptureComponent } from './datamanager/datacapture/datacapture.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'dataview', component: DataviewComponent },
   { path: 'docuploader', component: UploadDocComponent },
   { path: 'docexplorer', component: DocumentExplorerComponent },
+  { path: 'incidentreport', component: IncidentReportingComponent },
   { path: '**', component: HomeComponent}
 ];
 

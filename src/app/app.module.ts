@@ -39,6 +39,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadDocComponent } from './documentmanager/upload-doc/upload-doc.component'
 import { HttpClientModule } from '@angular/common/http';
@@ -48,6 +49,8 @@ import { FilePickerComponent } from './modal/file-picker/file-picker.component';
 import { SignupComponent } from './account/signup.component';
 import { TelephoneInputComponent } from './common-components/telephone-input/telephone-input.component';
 import { IncidentReportingComponent } from './incident-reporting/incident-reporting.component';
+import { SimpledataComponent } from './datamanager/simpledata/simpledata.component';
+import { NomenuTopComponent } from './common-components/nomenu-top/nomenu-top.component';
 
 
 @NgModule({
@@ -66,7 +69,9 @@ import { IncidentReportingComponent } from './incident-reporting/incident-report
     FilePickerComponent,
     SignupComponent,
     TelephoneInputComponent,
-    IncidentReportingComponent
+    IncidentReportingComponent,
+    SimpledataComponent,
+    NomenuTopComponent
   ],
   imports: [
     BrowserModule,
@@ -100,6 +105,7 @@ import { IncidentReportingComponent } from './incident-reporting/incident-report
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
+    MatDividerModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
