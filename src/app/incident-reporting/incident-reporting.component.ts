@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IncidentReportDTO } from '../model/incidentreport';
 
 @Component({
   selector: 'app-incident-reporting',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncidentReportingComponent implements OnInit {
 
-  topTitle: string = "ZAGD Vollfallmeldung";
+  topTitle: string = "ZAGD Vorfallmelde";
+  incidentReport = {} as IncidentReportDTO;
 
-  constructor() { }
+  currentDate: Date = new Date();
+  selectedDate: String;
+  institution: String = "";
 
-  ngOnInit(): void {
+  constructor() {
+    this.selectedDate = this.currentDate.toString();
   }
+
+  ngOnInit(): void {  }
+
+  showIncidentEvent(event: any) {
+    console.warn(JSON.stringify(event));
+  }
+
+  onSubmit() {  }
 
 }

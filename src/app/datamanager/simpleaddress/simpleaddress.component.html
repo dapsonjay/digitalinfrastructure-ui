@@ -1,0 +1,62 @@
+
+  <fieldset>
+    <legend> <b>Address</b> </legend>
+
+    <div class="row">
+      <div class="col-6 col-margin" >
+        <div class="datacapture-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Street</mat-label>
+            <input matInput
+            name="streetName"
+            [(ngModel)]="address.street"
+            placeholder="Street">
+            <mat-hint>Please enter your street</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-6 col-margin" >
+        <div class="datacapture-container">
+          <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput
+            name="cityName"
+            [(ngModel)]="address.city"
+            placeholder="City">
+            <mat-hint>Please enter your City</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 col-margin" >
+        <div class="datacapture-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Zipcode</mat-label>
+            <input matInput style="background-color: whitesmoke;"
+                   name="address.postalcode"
+                   #postcode="ngModel"
+                   [(ngModel)]="address.postalcode"
+                   placeholder="Zipcode">
+            <mat-hint>Please enter your zipcode</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-6 col-margin" >
+        <div class="datacapture-container">
+          <mat-form-field appearance="outline">
+            <mat-label>State</mat-label>
+            <input matInput
+                   name="stateName"
+                   #state="ngModel"
+                   [(ngModel)]="address.state"
+                   placeholder="State">
+            <mat-hint>Please enter your state</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+

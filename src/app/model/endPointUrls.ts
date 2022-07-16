@@ -13,4 +13,9 @@ export class EndPointUrls {
   deleteMultiDocumentEndPoint: string = `${this.baseUrl}/delete/multidocument`;
   deleteFolderEndPoint: string = `${this.baseUrl}/delete/foloder`;
   deleteMultiFolderEndPoint: string = `${this.baseUrl}/delete/multifolder`;
+  addIncidentReportEndPoint: string = `${this.baseUrl}/incidentReport/add/`;
+  getIncidentReportEndPoint: string = `${this.baseUrl}/incidentReport/get/`;
+  getListIncidentReportEndPoint: string = `${this.baseUrl}/incidentReport/get/list/`;
+  deleteIncidentReportEndPoint: string = `${this.baseUrl}/incidentReport/delete/`;
+  updateIncidentReportEndPoint: string = `${this.baseUrl}/incidentReport/delete/`;
 }

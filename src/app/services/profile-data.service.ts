@@ -20,7 +20,7 @@ export class ProfileDTOService {
 
   sendByPost(profile: ProfileDTO) {
 
-    console.warn("Sending request to "+ this.endPoints.addProfileEndPoint);
+    console.warn("Sending request to "+ this.endPoints.registerUser);
     this.http.post(this.endPoints.registerUser, profile)
                    .subscribe(result => {
                       this._profileDTOSubject.next(Object.assign(result));

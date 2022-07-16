@@ -1,69 +1,166 @@
 <div class="container gradient-ocean-blue">
+
   <app-nomenu-top [title]="topTitle"></app-nomenu-top>
-  <div class="row sector-margin">
-    <div class="col-xl-12">
-      <h2><b>Zentralrat Vorfallmeldeformular</b></h2>
-      <p class="text-start">
-        Für alle, die von Anti-Schwarzem Rassismus und/oder Diskriminierung direkt betroffen sind,
-        sind gibt es jetzt in Nürnber die Anlaufstelle ZAGD e.V im KomPAD - Kompetenznetwerk
-        Anti-Schwarzer Rassismus.
-      </p>
-    </div>
-  </div>
 
-  <div class="row sector-margin">
-    <div class="col-xl-12">
-      <h4><b>Wir beraten anonym, kostenlos, vertraulich.</b></h4>
-      <p class="text-start">
-        Bitten melden Sie uns, wenn Sie einen Vorfall mit Anti-Schwarzen Rassimus
-        Diskriminierung erlebt haben. Wenn Sie uns für Rückfragen zur Verfügung
-        stehen wollen, geben Sie bitte auch Ihre Kontaktinformationen an.
-        <b>Ihre Daten werden streng vertraulich behandelt</b>, nicht an Dritte
-        weitergegeben und nur zur Kontaktaufnahme zwischen dem ZAGD e.V und Ihnen verwendt.
-      </p>
-      <p>
-        <b>
-          Zentrales Princip unserr Arbeit ist der Vertrauensschutz. Sie entscheiden,
-          wie mit Ihrer Meldung umgegangen werden soll.
-        </b>
-      </p>
-    </div>
-  </div>
-
-  <div class="row sector-margin">
-    <div class="col-xl-12 text-start">
-      <b>Was ist passiert?</b><br><br>
-      Bitte beschreiben Sie den Vorfall so genau wie möglich<br><br>
-
-    </div>
-  </div>
-
-  <fieldset>
-    <legend><b>Was ist passiert?</b></legend>
-    <div class="row">
-      <div class="col-12 col-margin" >
-        Bitte beschreiben Sie den Vorfall so genau wie möglich<br><br>
-        <mat-form-field appearance="outline" class="extra-note">
-          <mat-label><b></b></mat-label>
-          <textarea matInput placeholder="Note" style="width: 100%;"></textarea>
-          <mat-hint>Enter any extra information</mat-hint>
-        </mat-form-field>
+  <form action="">
+    <fieldset>
+      <legend></legend>
+      <div class="row sector-margin">
+        <div class="col-xl-12">
+          <h2><b>Zentralrat Vorfallmeldeformular</b></h2>
+          <p class="text-start">
+            Für alle, die von Anti-Schwarzem Rassismus und/oder Diskriminierung direkt betroffen sind,
+            sind gibt es jetzt in Nürnber die Anlaufstelle ZAGD e.V im KomPAD - Kompetenznetwerk
+            Anti-Schwarzer Rassismus.
+          </p>
+        </div>
       </div>
-    </div>
-  </fieldset>
 
-  <fieldset>
-    <legend><b>Was ist passiert?</b></legend>
-    <div class="row">
-      <div class="col-12 col-margin" >
-        Bitte beschreiben Sie den Vorfall so genau wie möglich<br><br>
-        <mat-form-field appearance="outline" class="extra-note">
-          <mat-label><b></b></mat-label>
-          <textarea matInput placeholder="Note" style="width: 90%;"></textarea>
-          <mat-hint>Enter any extra information</mat-hint>
-        </mat-form-field>
+      <div class="row sector-margin">
+        <div class="col-xl-12">
+          <h4><b>Wir beraten anonym, kostenlos, vertraulich.</b></h4>
+          <p class="text-start">
+            Bitten melden Sie uns, wenn Sie einen Vorfall mit Anti-Schwarzen Rassimus
+            Diskriminierung erlebt haben. Wenn Sie uns für Rückfragen zur Verfügung
+            stehen wollen, geben Sie bitte auch Ihre Kontaktinformationen an.
+            <b>Ihre Daten werden streng vertraulich behandelt</b>, nicht an Dritte
+            weitergegeben und nur zur Kontaktaufnahme zwischen dem ZAGD e.V und Ihnen verwendt.
+          </p>
+          <p>
+            <b>
+              Zentrales Princip unserr Arbeit ist der Vertrauensschutz. Sie entscheiden,
+              wie mit Ihrer Meldung umgegangen werden soll.
+            </b>
+          </p>
+        </div>
       </div>
-    </div>
+    </fieldset>
+    <div style="height: 10px"></div>
+
+    <fieldset>
+      <legend><b>Was ist passiert?</b></legend>
+      <div class="row">
+        <div class="col-12 col-margin"  >
+          &nbsp;&nbsp;&nbsp;
+          Bitte beschreiben Sie den Vorfall so genau wie möglich<br><br>
+          <mat-form-field appearance="outline" class="extra-note">
+            <mat-label></mat-label>
+            <textarea matInput
+                 name="description"
+                 [(ngModel)]="incidentReport.incidentDescription"
+                 placeholder="Beschreibung"
+                 style="width: 100%;"></textarea>
+            <mat-hint>Enter any extra information</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </fieldset>
+    <div style="height: 10px"></div>
+
+    <fieldset>
+      <legend>Wann hat sich der Vorfall ereignet?</legend>
+
+      <div class="row">
+        <div class="col-6 col-margin">
+          <app-zag-timepicker></app-zag-timepicker>
+        </div>
+        <div class="col-6 col-margin" >
+            <div class="datacapture-container">
+              <mat-form-field appearance="outline">
+                <mat-label>Eregnis Datum</mat-label>
+                <input matInput
+                       [matDatepicker]="selectDate"
+                       name="selectedDate"
+                       #dated="ngModel"
+                       [(ngModel)]="incidentReport.incidentDate">
+                <mat-datepicker-toggle matSuffix [for]="selectDate"></mat-datepicker-toggle>
+                <mat-datepicker #selectDate></mat-datepicker>
+                <mat-hint>Please enter your join date</mat-hint>
+              </mat-form-field>
+            </div>
+        </div>
+      </div>
+    </fieldset>
+    <div style="height: 10px"></div>
+
+    <fieldset>
+      <legend><b>Mit wenn oder welcher Institution?</b></legend>
+      <div class="row">
+        <div class="col-12 col-margin" >
+          <mat-form-field appearance="outline" class="extra-note">
+            <input matInput
+            name="institution"
+            #institution="ngModel"
+            [ngModel]="incidentReport.institution"
+            placeholder="Institution">
+          </mat-form-field>
+        </div>
+      </div>
+    </fieldset>
+    <div style="height: 10px"></div>
+
+    <fieldset>
+      <legend><b>Contact Me</b></legend>
+      <div class="datacapture-container-c3">
+        <div class="row">
+          <div class="col-6">
+            <mat-checkbox class="extra-note"
+                   name="contactChecked"
+                   #contactChecked="ngModel"
+                   [(ngModel)]="incidentReport.contactMe">
+                    Duerfen wir sie kontaktieren?
+            </mat-checkbox>
+          </div>
+          <div class="col-6">
+            <mat-checkbox class="extra-note"
+                   name="perEmailChecked"
+                   #perEmailChecked="ngModel"
+                   [(ngModel)]="incidentReport.perEmail">
+                    Per E-Mail
+             </mat-checkbox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <mat-checkbox class="extra-note"
+                   name="perPhoneChecked"
+                   #perPhoneChecked="ngModel"
+                   [(ngModel)]="incidentReport.perPhone">
+                    Per Telefon
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div style="height: 10px"></div>
+
+    <app-simpleaddress></app-simpleaddress>
+
+    <app-simpledata></app-simpledata>
+
+    <fieldset>
+      <div class="row" style="height: 100px;">
+        <div class="col-6" sty>
+          <button mat-raised-button
+                  color="primary"
+                  class="center-element"
+                  routerLink="/home"
+                  routerLinkActive="router-link-active">
+            Cancel
+          </button>
+        </div>
+        <div class="col-6">
+          <button mat-raised-button color="primary"
+                  class="center-element"
+                  (click)=onSubmit()>
+            Submit
+          </button>
+        </div>
+      </div>
   </fieldset>
+  <div style="height: 40px"></div>
+
+  </form>
 
 </div>

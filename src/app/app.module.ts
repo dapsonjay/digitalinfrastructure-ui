@@ -41,6 +41,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule, NgxMatNativeDateModule } from '@angular-material-components/datetime-picker';
+import { NgxMatMomentModule } from '@angular-material-components/moment-adapter';
 import { UploadDocComponent } from './documentmanager/upload-doc/upload-doc.component'
 import { HttpClientModule } from '@angular/common/http';
 import { DocumentExplorerComponent } from './documentmanager/document-explorer/document-explorer.component';
@@ -51,6 +53,9 @@ import { TelephoneInputComponent } from './common-components/telephone-input/tel
 import { IncidentReportingComponent } from './incident-reporting/incident-reporting.component';
 import { SimpledataComponent } from './datamanager/simpledata/simpledata.component';
 import { NomenuTopComponent } from './common-components/nomenu-top/nomenu-top.component';
+import { ZagTimepickerComponent } from './common-components/zag-timepicker/zag-timepicker.component';
+import { SimpleaddressComponent } from './datamanager/simpleaddress/simpleaddress.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -71,7 +76,9 @@ import { NomenuTopComponent } from './common-components/nomenu-top/nomenu-top.co
     TelephoneInputComponent,
     IncidentReportingComponent,
     SimpledataComponent,
-    NomenuTopComponent
+    NomenuTopComponent,
+    ZagTimepickerComponent,
+    SimpleaddressComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,6 +110,7 @@ import { NomenuTopComponent } from './common-components/nomenu-top/nomenu-top.co
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
+    MatFormFieldModule,
     MatSortModule,
     MatProgressSpinnerModule,
     MatDividerModule,

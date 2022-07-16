@@ -1,1 +1,58 @@
-<p>simpledata works!</p>
+<fieldset>
+  <legend><b>Personal Data</b></legend>
+
+  <div class="row">
+    <div class="col-6 col-margin" >
+      <div class="datacapture-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Firstname</mat-label>
+          <input matInput
+          name="fname"
+          [ngModel]="firstname"
+          placeholder="Firstname">
+          <mat-hint>Please enter your firstname</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="col-6 col-margin" >
+      <div class="datacapture-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <input matInput
+          name="lname"
+          [ngModel]="lastname"
+          placeholder="Lastname">
+          <mat-hint>Please enter your lastname</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6 col-margin" >
+      <div class="datacapture-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput style="background-color: whitesmoke;"
+                 name="email"
+                 [ngModel]="email"
+                 placeholder="Email">
+          <mat-hint>Please enter your email</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-6 col-margin" >
+      <div class="datacapture-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Telephone</mat-label>
+          <input matInput
+                 name="phone"
+                 [ngModel]="phone"
+                 placeholder="Phone">
+          <mat-hint>Please enter your phone</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</fieldset>

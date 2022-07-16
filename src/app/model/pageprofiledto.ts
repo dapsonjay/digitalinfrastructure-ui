@@ -16,5 +16,7 @@ export interface PageMetaData {
 
 export class PageableProfileDataDto {
   constructor(public profileDTO: ProfileDTO[],
-              public page: PageMetaData) {}
+              public page: PageMetaData,
+              public internalId: String,
+              public message: String) {}
 }

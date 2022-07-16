@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col" >
+    <div class="datacapture-container-c3">
+      <span>
+        <mat-form-field appearance="outline">
+          <mat-label>Hour</mat-label>
+          <mat-select [(value)]="hourSelected"
+            name="hourSelect"
+            panelClass="timepicker_panel" >
+            <mat-option *ngFor="let hr of hourList" [value]="hr">
+              {{ hr }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span> :
+      <span>
+        <mat-form-field appearance="outline">
+          <mat-label>Minute</mat-label>
+          <mat-select [(value)]="minuteSelected"
+            name="minuteSelect"
+            panelClass="timepicker_panel">
+            <mat-option *ngFor="let min of minuteList" [value]="min">
+              {{ min }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+  </div>
+</div>
+
+

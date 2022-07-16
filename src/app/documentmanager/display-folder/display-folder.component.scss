@@ -1,4 +1,28 @@
+ul {
+  display: contents;
+  list-style-image: url('../../../assets/images/arrow-right-folder-close-small.png');
+  list-style-position: inside;
+  align-items: start;
+}
+
 .list-icon {
   display: list-item;
-  list-style-image: url('../../../assets/images/arrow-right-6x12.png');
+  list-style-image: url('../../../assets/images/arrow-right-folder-close-small.png');
+  list-style-position: inside;
+  align-items: center;
+}
+
+.list-folder-close-icon {
+  display: list-item;
+  list-style-image: url('../../../assets/images/folder-close.png');
+}
+
+.list-folder-open-icon {
+  display: list-item;
+  list-style-image: url('../../../assets/images/folder-open.png');
+}
+
+.list-file-icon {
+  display: list-item;
+  list-style-image: url('../../../assets/images/file-01.png');
 }

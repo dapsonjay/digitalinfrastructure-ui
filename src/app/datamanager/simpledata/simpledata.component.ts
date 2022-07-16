@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-simpledata',
@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpledataComponent implements OnInit {
 
+
+  @Output() passDataOver = new EventEmitter<string>();
+
+  email: any;
+  phone: any;
+  postalcode: any;
+  state: any;
+  firstname: any;
+  lastname: any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }
