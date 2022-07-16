@@ -1,4 +1,4 @@
-export class Document {
+export class DisDocument {
   documentId: string = "";
   filename: string = "";
   extension: string = "";
@@ -12,5 +12,5 @@ export class Document {
   createdOn: string = "";
   modifiedOn: string = "";
   accessedOn: string = "";
-  childer? : Document[];
+  childer? : DisDocument[];
 }
