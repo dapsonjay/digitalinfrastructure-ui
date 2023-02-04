@@ -1,3 +1,4 @@
+import { DocumentManagerService } from 'src/app/services/document-manager.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FilePickerComponent } from 'src/app/modal/file-picker/file-picker.component';
@@ -14,7 +15,7 @@ export class DocumentExplorerComponent implements OnInit {
 
   populatedView: boolean = true;
 
-  constructor(public matDialog: MatDialog) { }
+  constructor(public matDialog: MatDialog, private disManagerService: DocumentManagerService) { }
 
   ngOnInit(): void {
   }
@@ -29,4 +30,7 @@ export class DocumentExplorerComponent implements OnInit {
     const modalDialog = this.matDialog.open(FilePickerComponent, dialogConfig);
   }
 
+  onShowDocument() {
+      let disDocument: DisDocument = disManagerService.createDocumentFromFileDemo();
+  }
 }
