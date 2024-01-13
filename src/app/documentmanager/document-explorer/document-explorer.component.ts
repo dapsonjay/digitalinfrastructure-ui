@@ -3,6 +3,8 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FilePickerComponent } from 'src/app/modal/file-picker/file-picker.component';
 import { UploadDocComponent } from '../upload-doc/upload-doc.component';
+import { DisDocument } from './model/document';
+
 
 @Component({
   selector: 'app-document-explorer',
@@ -31,6 +33,6 @@ export class DocumentExplorerComponent implements OnInit {
   }
 
   onShowDocument() {
-      let disDocument: DisDocument = disManagerService.createDocumentFromFileDemo();
+      let disDocument: DisDocument = this.disManagerService.createDocumentFromFileDemo();
   }
 }
