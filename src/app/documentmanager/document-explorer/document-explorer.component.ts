@@ -3,7 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FilePickerComponent } from 'src/app/modal/file-picker/file-picker.component';
 import { UploadDocComponent } from '../upload-doc/upload-doc.component';
-import { DisDocument } from './model/document';
+import { DisDocument } from 'src/app/model/document';
 
 
 @Component({
