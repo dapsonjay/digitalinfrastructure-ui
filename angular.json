@@ -111,5 +111,8 @@
       }
     }
   },
-  "defaultProject": "digitalCenter"
+  "defaultProject": "digitalCenter",
+  "cli": {
+    "analytics": false
+  }
 }
